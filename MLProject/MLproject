@@ -14,7 +14,7 @@ entry_points:
       random_state: { type: int, default: 42 }
       max_iter: { type: int, default: 3000 }
     command: >
-      python3 ../modelling.py
+      python ../modelling.py
       --data_path {data_path}
       --test_size {test_size}
       --random_state {random_state}
