@@ -27,6 +27,12 @@ jobs:
         run: |
           mlflow run MLProject --env-manager=local
 
+            - name: Upload MLflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-runs
+          path: mlruns
+
       # Optional (bagus untuk bukti): upload folder mlruns sebagai artifact
       - name: Upload mlruns (optional)
         uses: actions/upload-artifact@v4
