@@ -1,0 +1,21 @@
+name: workflow-ci-titanic
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path:
+        {
+          type: str,
+          default: "../namadataset_preprocessing/titanic_preprocessing.csv",
+        }
+      test_size: { type: float, default: 0.2 }
+      random_state: { type: int, default: 42 }
+      max_iter: { type: int, default: 3000 }
+    command: >
+      python3 ../modelling.py
+      --data_path {data_path}
+      --test_size {test_size}
+      --random_state {random_state}
+      --max_iter {max_iter}
